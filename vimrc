@@ -1,6 +1,9 @@
 "avoiding annoying CSApprox warning message
 let g:CSApprox_verbose_level = 0
 
+" change the mapleader from \ to ,
+let mapleader=","
+
 "necessary on some Linux distros for pathogen to properly load bundles
 filetype on
 filetype off
@@ -239,11 +242,11 @@ if has("gui_running")
     endif
 
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Menlo:h14
+        set guifont=Menlo:h12
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
-        "map <D-t> :CommandT<CR>
+        " map <D-t> :CommandT<CR>
         " make Mac's Option key behave as the Meta key
     endif
 
@@ -264,6 +267,7 @@ else
             set term=xterm-256color
             colorscheme railscasts
         else
+            set t_Co=256
             colorscheme default
         endif
     endif
